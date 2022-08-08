@@ -18,7 +18,8 @@ samples, guidance on mobile development, and a full API reference.
 Detail Aplikasi :
 - Aplikasi Sistem Pendukung Keputusan untuk Pemilihan Handphone , salah ilmu Kecerdasan Buatan
 - Aplikasi dibangun dengan Menggunakan Flutter Dan State Management GET-X.
-- Aplikasi dibanugn dengan menerapkan kaidah dari metode SPK yaitu Simple Aditive Weghting (SAW).
+- Aplikasi dibangun dengan menerapkan kaidah dari metode SPK yaitu Simple Aditive Weghting (SAW).
+- Aplikasi menggunakan Database Firebase sebagai Backend Aplication.
 
 
 Demo
