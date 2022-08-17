@@ -24,19 +24,19 @@ class CariRekomendasiController extends GetxController {
   List<Map<String, dynamic>> dataMappingHarga = [
     {
       'harga': 'Harga Rp.1.5 Jt - Rp. 2 Jt',
-      'value': 4,
+      'value': 1,
     },
     {
       'harga': 'Harga Rp.2 Jt - Rp. 2.5 Jt',
-      'value': 3,
-    },
-    {
-      'harga': 'Harga Rp.2.5 Jt - Rp. 3 Jt',
       'value': 2,
     },
     {
+      'harga': 'Harga Rp.2.5 Jt - Rp. 3 Jt',
+      'value': 3,
+    },
+    {
       'harga': 'Harga Rp.3 Jt keatas',
-      'value': 1,
+      'value': 4,
     },
   ];
 
@@ -128,10 +128,10 @@ class CariRekomendasiController extends GetxController {
 
   /// data akan dipantau secara real time
   /// sehingga ketika ada perubahan , pada database . akan langsung kedeteksi oleh aplikasi
-  Stream<QuerySnapshot<Object?>> streamGetData() {
+  Stream<QuerySnapshot<Object?>> streamGetData() async* {
     CollectionReference productHp = firestore.collection("data-hp");
 
-    return productHp.snapshots();
+    yield* productHp.snapshots();
   }
 
   /// ========= memasukan data menjadi list of mapping =========
@@ -326,11 +326,7 @@ class CariRekomendasiController extends GetxController {
   //----------------------------------------------------------------------------
   List<Map<String, dynamic>> sortDataHp(
       {required List<Map<String, dynamic>> dataHp, required int bobotHarga}) {
-    if (BobotPreferensiHarga == 4) {
-      dataHp.sort((a, b) => ((a['result'])) - ((b['result'])));
-    } else {
-      dataHp.sort((a, b) => ((b['result'])) - ((a['result'])));
-    }
+    dataHp.sort((a, b) => ((b['result'])) - ((a['result'])));
     return dataHp;
   }
 

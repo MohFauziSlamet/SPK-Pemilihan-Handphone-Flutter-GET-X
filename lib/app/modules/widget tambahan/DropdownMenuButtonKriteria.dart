@@ -4,12 +4,13 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
-Container DropdownMenuButtonKriteria(
-    {required List<Map<String, dynamic>> dataMapping,
-    required String value,
-    required String detail,
-    required void Function(Map<String, dynamic>?)? onChanged,
-    int? nilaiData}) {
+Container DropdownMenuButtonKriteria({
+  required List<Map<String, dynamic>> dataMapping,
+  required String value,
+  required String detail,
+  required void Function(Map<String, dynamic>?)? onChanged,
+  int? nilaiData,
+}) {
   return Container(
     child: Padding(
       padding: const EdgeInsets.only(left: 20, right: 20, top: 20),

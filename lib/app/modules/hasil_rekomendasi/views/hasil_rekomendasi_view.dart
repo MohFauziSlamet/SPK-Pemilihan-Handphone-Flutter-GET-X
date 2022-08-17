@@ -44,7 +44,7 @@ class HasilRekomendasiView extends GetView<HasilRekomendasiController> {
                 // jumlah  kolom grid view
                 crossAxisCount: 1,
               ),
-              itemCount: dataHp.dataHpFinalSawSort.length,
+              itemCount: 5,
               itemBuilder: (context, index) {
                 var data = dataHp.dataHpFinalSawSort[index];
                 // print("isi data $data");

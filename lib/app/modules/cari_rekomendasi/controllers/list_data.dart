@@ -10,13 +10,13 @@ class AllListValueData extends GetxController {
     required double harga,
   }) {
     if (harga == 1.5 || harga < 2.0) {
-      valueHarga.add(4);
-    } else if (harga == 2.0 || harga < 2.5) {
-      valueHarga.add(3);
-    } else if (harga == 2.5 || harga < 3.0) {
-      valueHarga.add(2);
-    } else if (harga >= 3.0) {
       valueHarga.add(1);
+    } else if (harga == 2.0 || harga < 2.5) {
+      valueHarga.add(2);
+    } else if (harga == 2.5 || harga < 3.0) {
+      valueHarga.add(3);
+    } else if (harga >= 3.0) {
+      valueHarga.add(4);
     }
   }
 

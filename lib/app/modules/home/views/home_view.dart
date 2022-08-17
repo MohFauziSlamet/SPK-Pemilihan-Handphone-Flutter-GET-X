@@ -18,6 +18,7 @@ class HomeView extends GetView<HomeController> {
       ),
       body: Stack(
         children: [
+          /// BACKGROUND
           SizedBox(
             height: Get.height * 0.5,
             child: const Image(
@@ -25,6 +26,8 @@ class HomeView extends GetView<HomeController> {
               fit: BoxFit.cover,
             ),
           ),
+
+          /// ISI DARI 4 BUTTON
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -42,6 +45,7 @@ class HomeView extends GetView<HomeController> {
                   horizontal: 40,
                 ),
                 children: [
+                  /// BUTTON CARI REKOMENDASI
                   boxTransparants(
                     imageUrl: "assets/images/search.png",
                     imageDeskription: 'Cari Rekomendasi',
@@ -50,6 +54,8 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   const SizedBox(height: 20),
+
+                  /// BUTTON HASIL PENCARIAN
                   boxTransparants(
                     imageUrl: "assets/images/new-complain.png",
                     imageDeskription: 'Hasil Pencarian',
@@ -58,6 +64,8 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   const SizedBox(height: 20),
+
+                  /// BUTTON KATALOG HP
                   boxTransparants(
                     imageUrl: "assets/images/checklist.png",
                     imageDeskription: 'Katalog Hp',
@@ -66,6 +74,8 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   const SizedBox(height: 20),
+
+                  /// BUTTON PROFILE STORE
                   boxTransparants(
                     imageUrl: "assets/images/shop.png",
                     imageDeskription: 'Profile Store',

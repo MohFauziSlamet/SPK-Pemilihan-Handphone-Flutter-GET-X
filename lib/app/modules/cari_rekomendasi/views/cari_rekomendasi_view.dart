@@ -24,9 +24,9 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
             if (snapshot.connectionState == ConnectionState.active) {
               var getDataAll = snapshot.data!.docs;
 
+              /// PROSES MEMASUKAN DATA DARI DATABASE KE LOCAL
               for (var index = 0; index < getDataAll.length; index++) {
                 var data = getDataAll[index].data() as Map<String, dynamic>;
-
                 controller.memasukanDataKeList(
                   nama: data['nama'],
                   harga: data['harga'],
@@ -42,8 +42,10 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
                 // print("looping ke $index");
               }
             }
+
             return Stack(
               children: [
+                /// BACKGROUND
                 Container(
                   height: Get.height,
                   child: const Image(
@@ -51,6 +53,8 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
                     fit: BoxFit.cover,
                   ),
                 ),
+
+                /// CONTENT DROPDONW
                 Center(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(25),
@@ -73,6 +77,7 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            /// JUDUL
                             const Padding(
                               padding: EdgeInsets.only(
                                   left: 20.0, top: 20, right: 20),
@@ -84,6 +89,8 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
                                 ),
                               ),
                             ),
+
+                            /// DROPDOWN HARGA
                             DropdownMenuButtonKriteria(
                               dataMapping: controller.dataMappingHarga,
                               value: 'harga',
@@ -98,6 +105,8 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
                                 }
                               },
                             ),
+
+                            /// DROPDOWN RAM
                             DropdownMenuButtonKriteria(
                               dataMapping: controller.dataMappingRam,
                               value: 'ram',
@@ -112,6 +121,8 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
                                 }
                               },
                             ),
+
+                            /// DROPDOWN ROM
                             DropdownMenuButtonKriteria(
                               dataMapping: controller.dataMappingRom,
                               value: 'rom',
@@ -126,6 +137,8 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
                                 }
                               },
                             ),
+
+                            /// DROPDOWN CAMERA
                             DropdownMenuButtonKriteria(
                               dataMapping: controller.dataMappingCamera,
                               value: 'camera',
@@ -140,6 +153,8 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
                                 }
                               },
                             ),
+
+                            /// DROPDOWN BATRAI
                             DropdownMenuButtonKriteria(
                               dataMapping: controller.dataMappingBatrai,
                               value: 'batrai',
@@ -154,6 +169,8 @@ class CariRekomendasiView extends GetView<CariRekomendasiController> {
                                 }
                               },
                             ),
+
+                            /// BUTTON CARI
                             buttonConfirm(
                               () {
                                 // controller.tampil();
